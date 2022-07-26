@@ -15,9 +15,10 @@ export const CartProvider = (props) => {
     const itemInCart = items.find((i) => i.id === item.id);
 
     if (itemInCart) {
-      itemInCart.amount += 1;
+      itemInCart.amount += item.amount;
+      console.log(itemInCart);
     } else {
-      item.amount = 1;
+      item.amount = item.amount;
       setItems([...items, item]);
     }
     setTotalAmount(totalAmount + item.price);
